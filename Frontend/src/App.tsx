@@ -1,10 +1,16 @@
 import './App.css';
+import { useApi } from './MyStatsApi';
 
 function App() {
+  const movies = useApi();
+
   return (
-    <div className="App">
+    <>
       <h1>MyStats</h1>
-    </div>
+      {movies.map(movie => {
+        return <div>{movie.name}</div>
+      })}
+    </>
   );
 }
 
